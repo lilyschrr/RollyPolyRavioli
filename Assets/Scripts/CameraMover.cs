@@ -18,7 +18,7 @@ public class CameraMover : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Please assign all transforms in the inspector.");
+            Debug.LogWarning("Assign all transforms in the inspector!");
         }
     }
 
@@ -35,10 +35,12 @@ public class CameraMover : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float percentageComplete = elapsedTime / duration;
 
-            // Smoothly interpolate position
-            //cameraTransform.position = Vector3.Lerp(startPosition.position, endPosition.position, percentageComplete);
-            float smoothPercentage = Mathf.SmoothStep(0f, 1f, percentageComplete);
-cameraTransform.position = Vector3.Lerp(startPosition.position, endPosition.position, smoothPercentage);
+            // Smoothly interpolate position:
+                // Linear movement: 
+                //cameraTransform.position = Vector3.Lerp(startPosition.position, endPosition.position, percentageComplete);
+                float smoothPercentage = Mathf.SmoothStep(0f, 1f, percentageComplete);
+                // Exponential ease:
+                cameraTransform.position = Vector3.Lerp(startPosition.position, endPosition.position, smoothPercentage);
 
             
             // Smoothly interpolate rotation
