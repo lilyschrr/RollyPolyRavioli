@@ -6,7 +6,7 @@ public class DialogueTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [System.Serializable]
     public class DialogueData
     {
-        [TextArea(3, 10)] // Gives a nice large text box in the Unity Inspector
+        [TextArea(3, 10)] // Gives text box in inspector
         public string[] dialogueLines;
     }
 
