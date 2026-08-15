@@ -1,11 +1,12 @@
 using UnityEngine;
-using UnityEngine.InputSystem; 
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 6.0f;
+    public float rotateSpeed = 10.0f;
     public float gravity = -9.81f;
     public float jumpHeight = 1.5f;
 
@@ -23,14 +24,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private Vector2 moveInput;
 
-    // Enable actions when object becomes active
     private void OnEnable()
     {
         moveAction.Enable();
         jumpAction.Enable();
     }
 
-    // Disable actions when object is deactivated
     private void OnDisable()
     {
         moveAction.Disable();
@@ -44,28 +43,36 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Ground check and velocity reset
+        // Ground check
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f; 
+            velocity.y = -2f;
         }
 
-        // Read WASD input as a Vector2
+        // Read Input
         moveInput = moveAction.ReadValue<Vector2>();
 
-        // Convert 2D input into 3D relative to player rotation
-        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
-        controller.Move(move * moveSpeed * Time.deltaTime);
+        // Calculates movement direction relative to global world space
+        Vector3 moveDirection = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
 
-        // Jump check
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (moveDirection.magnitude >= 0.1f)
+        {
+            // Move
+            controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+            // Rotate
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
+        }
+
+        // Jump
+        if (jumpAction.triggered) // TODO: fix grounded bool
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        // Gravity physics
+        // Gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
