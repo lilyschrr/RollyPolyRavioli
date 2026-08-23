@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour
 {
+    // Tracks specific Interactable object player is using
+    public static Interactable CurrentActive { get; private set; }
+
     private bool canInteract = false;
     private bool interacting = false;
-    private string subSceneName;
+    
+    // Store loaded Scene struct (rather than just a string)
+    private Scene loadedSubScene;
 
-    // Stores main scene's objects to turn back on later
     private List<GameObject> mainSceneRoots = new List<GameObject>();
 
     [Header("Objects")]
@@ -26,11 +30,13 @@ public class Interactable : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) canInteract = true;
+        Debug.Log("Player entered");
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player")) canInteract = false;
+        Debug.Log("Player exited");
     }
 
     void Update()
@@ -38,51 +44,85 @@ public class Interactable : MonoBehaviour
         if (enterAction.triggered && canInteract && !interacting)
         {
             interacting = true;
+            CurrentActive = this; // Sets this instance as the active one
             LoadAndIsolateScene(sceneToEnter);
         }
     }
 
     public void LoadAndIsolateScene(string newSceneName)
     {
-        subSceneName = newSceneName;
-        
-        // Get current active main scene
         Scene mainScene = SceneManager.GetActiveScene();
         mainSceneRoots.Clear();
         mainScene.GetRootGameObjects(mainSceneRoots);
 
-        // Hide and disable everything in main scene
+        // Hide main scene objects
         foreach (GameObject root in mainSceneRoots)
         {
             root.SetActive(false);
         }
 
-        // Load new scene additively
-        SceneManager.LoadSceneAsync(newSceneName, LoadSceneMode.Additive).completed += (op) => 
+        // Load scene additively
+        SceneManager.LoadSceneAsync(newSceneName, LoadSceneMode.Additive).completed += (op) =>
         {
-            // Set new scene as active so new objects spawn there
-            Scene newScene = SceneManager.GetSceneByName(newSceneName);
-            SceneManager.SetActiveScene(newScene);
+            // Cache the exact loaded scene instance
+            loadedSubScene = SceneManager.GetSceneByName(newSceneName);
             
-            // Re-enable time
-            Time.timeScale = 1f; 
+            if (loadedSubScene.IsValid())
+            {
+                SceneManager.SetActiveScene(loadedSubScene);
+            }
+            else
+            {
+                Debug.LogError($"Failed to find loaded scene named: '{newSceneName}'. Check Build Settings and spelling!");
+            }
+
+            Time.timeScale = 1f;
         };
     }
 
-    public void ResumeMainScene()
+    public void ResumeMainScene(SubSceneResult returnedData = null)
     {
-        // Unload completed sub-scene
-        SceneManager.UnloadSceneAsync(subSceneName).completed += (op) =>
+        // Check if stored scene reference is valid
+        if (!loadedSubScene.IsValid() || !loadedSubScene.isLoaded)
         {
-            // Reactivate all hidden main scene objects
+            Debug.LogError($"Cannot unload scene: '{loadedSubScene.name}' is invalid or not loaded.");
+            return;
+        }
+
+        // Process returned data
+        if (returnedData != null)
+        {
+            Debug.Log($"Data received by {gameObject.name}: recipe = {returnedData.recipe}");
+            // TODO:
+            // Handle returned data here !!!
+        }
+
+        // Unload using Scene struct
+        SceneManager.UnloadSceneAsync(loadedSubScene).completed += (op) =>
+        {
+            // Reactivate main scene objects
             foreach (GameObject root in mainSceneRoots)
             {
                 if (root != null) root.SetActive(true);
             }
 
-            // Reset states
             interacting = false;
             Time.timeScale = 1f;
+
+            // Clear current active tracking
+            if (CurrentActive == this)
+            {
+                CurrentActive = null;
+            }
         };
     }
+}
+
+[System.Serializable]
+public class SubSceneResult
+{
+    public int score;
+    public bool isCompleted;
+    public string message;
+    public int recipe;
 }
