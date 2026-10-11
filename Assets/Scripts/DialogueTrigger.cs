@@ -1,7 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
-public class DialogueTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
+public class DialogueTrigger : MonoBehaviour
 {
     [System.Serializable]
     public class DialogueData
@@ -13,31 +15,27 @@ public class DialogueTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [Header("Dialogue Content")]
     [SerializeField] private DialogueData dialogue;
 
+    [SerializeField] public GameObject eTag;
+
     private DialogueManager dialogueManager;
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        // TODO: Change to adding sprite effect
-        Debug.Log("Mouse entered");
+    private bool interacting = false;
 
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        // TODO: Change to removing sprite effect
-        Debug.Log("Mouse exited");
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-        {
-            Debug.Log("clicked!!");
-            TriggerDialogue();
-        }
 
     void Start()
     {
         // Find DialogueManager in the scene
         dialogueManager = Object.FindFirstObjectByType<DialogueManager>();
+    }
+
+    void Update()
+    {
+        if (Keyboard.current.eKey.wasPressedThisFrame && !interacting)
+        {
+            eTag.SetActive(false);
+            interacting = true;
+            TriggerDialogue();
+        }
     }
 
     public void TriggerDialogue()
