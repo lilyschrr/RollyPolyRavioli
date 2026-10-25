@@ -1014,6 +1014,99 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8472067862361453529, guid: 41ffe41370c95354ab00959fb2bef7bd, type: 3}
   m_PrefabInstance: {fileID: 388724644}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &427832614
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 815044377665289711, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 815044377665289711, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 815044377665289711, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1486129026}
+    - target: {fileID: 815044377665289711, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 815044377665289711, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnFinish
+      objectReference: {fileID: 0}
+    - target: {fileID: 815044377665289711, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TableOrdering, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 815044377665289711, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081230973814032656, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1424.847
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081230973814032656, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 377.48203
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081230973814032656, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 858.0831
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081230973814032656, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081230973814032656, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081230973814032656, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081230973814032656, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081230973814032656, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081230973814032656, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081230973814032656, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972268858067725513, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: levelHandler
+      value: 
+      objectReference: {fileID: 1500505703}
+    - target: {fileID: 7328367648802267047, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_Name
+      value: Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328367648802267047, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
 --- !u!1 &544453463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,6 +1768,10 @@ PrefabInstance:
     - target: {fileID: 1962374678281210035, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041366720770269253, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2775269
       objectReference: {fileID: 0}
     - target: {fileID: 6515826699901392850, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3736,6 +3833,22 @@ MonoBehaviour:
       m_Action: Enter
       m_Flags: 0
     m_Flags: 0
+--- !u!1 &1486129024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7328367648802267047, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+  m_PrefabInstance: {fileID: 427832614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1486129026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6972268858067725513, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+  m_PrefabInstance: {fileID: 427832614}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486129024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0839c8d2da9aa5246959522fa4343cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableOrdering
 --- !u!1 &1500505702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,6 +3887,7 @@ MonoBehaviour:
   - {fileID: 1105372142}
   - {fileID: 1277018083}
   - {fileID: 1226506430}
+  adjective: 
   recipeName: 
   score: 0
   currentLevel: 1
@@ -4268,7 +4382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   player: {fileID: 621855145}
-  stationPrefab: {fileID: 0}
+  stationPrefab: {fileID: 1486129024}
   stationCollider: {fileID: 1930340793}
   enterAction:
     m_Name: Enter
@@ -4544,4 +4658,5 @@ SceneRoots:
   - {fileID: 1009736662}
   - {fileID: 647817664}
   - {fileID: 388724644}
+  - {fileID: 427832614}
   - {fileID: 1500505704}

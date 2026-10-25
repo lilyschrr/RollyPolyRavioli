@@ -11,6 +11,7 @@ public class LevelHandler : MonoBehaviour
 
 
     [Header("Game State")]
+    public string adjective;
     public string recipeName;
     public int score = 0;
     public int currentLevel = 1;
@@ -29,7 +30,6 @@ public class LevelHandler : MonoBehaviour
     public void StartNewLevel()
     {
         currentStationIndex = 0;
-
 
         // Set up the first station in the sequence
         SetUpNextStation(currentStationIndex);
@@ -68,7 +68,7 @@ public class LevelHandler : MonoBehaviour
         // Restore player movement speed
         if (player != null && player.GetComponent<PlayerMovement>() != null)
         {
-            player.GetComponent<PlayerMovement>().moveSpeed = 8f;
+            player.GetComponent<PlayerMovement>().moveSpeed = 400f;
         }
 
         // Determine the next station in sequence
