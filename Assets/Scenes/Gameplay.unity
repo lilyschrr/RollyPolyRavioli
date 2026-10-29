@@ -1761,6 +1761,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1813307664587104786, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
+      propertyPath: levelHandler
+      value: 
+      objectReference: {fileID: 1500505703}
     - target: {fileID: 1962374678281210035, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
       propertyPath: m_Name
       value: Book
