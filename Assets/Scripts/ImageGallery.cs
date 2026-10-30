@@ -8,16 +8,22 @@ public class ImageGallery : MonoBehaviour
     [SerializeField] private Image displayImage; 
 
     [Header("Gallery Data")]
-    [SerializeField] private List<Sprite> imageList = new List<Sprite>(); 
+    [SerializeField] private List<RecipeData> recipeList = new List<RecipeData>(); 
 
     private int currentIndex = 0; 
 
-
-    public int CurrentIndex 
+    public int CurrentIndex => currentIndex;
+    
+    // Helper property to fetch currently selected recipe
+    public RecipeData CurrentRecipe
     {
-        get { return currentIndex; }
+        get
+        {
+            if (recipeList.Count == 0 || currentIndex < 0 || currentIndex >= recipeList.Count)
+                return null;
+            return recipeList[currentIndex];
+        }
     }
-
 
     void Start()
     {
@@ -26,25 +32,23 @@ public class ImageGallery : MonoBehaviour
 
     public void ShowNextImage()
     {
-        if (imageList.Count == 0) return;
-        currentIndex++;
-        if (currentIndex >= imageList.Count) currentIndex = 0;
+        if (recipeList.Count == 0) return;
+        currentIndex = (currentIndex + 1) % recipeList.Count;
         UpdateGalleryDisplay();
     }
 
     public void ShowPreviousImage()
     {
-        if (imageList.Count == 0) return;
-        currentIndex--;
-        if (currentIndex < 0) currentIndex = imageList.Count - 1;
+        if (recipeList.Count == 0) return;
+        currentIndex = (currentIndex - 1 + recipeList.Count) % recipeList.Count;
         UpdateGalleryDisplay();
     }
 
     private void UpdateGalleryDisplay()
     {
-        if (imageList.Count > 0 && displayImage != null)
+        if (recipeList.Count > 0 && displayImage != null && CurrentRecipe != null)
         {
-            displayImage.sprite = imageList[currentIndex];
+            displayImage.sprite = CurrentRecipe.RecipeSprite;
         }
     }
 }

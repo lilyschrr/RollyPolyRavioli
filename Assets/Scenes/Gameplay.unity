@@ -1094,6 +1094,22 @@ PrefabInstance:
       propertyPath: levelHandler
       value: 
       objectReference: {fileID: 1500505703}
+    - target: {fileID: 6972268858067725513, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: allRecipes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972268858067725513, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: 'allRecipes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e2b4a6c5a8747e47b2f5fdcc9a8cae7, type: 2}
+    - target: {fileID: 6972268858067725513, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: 'allRecipes.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c7696bbb0406aeb42880eece358eb172, type: 2}
+    - target: {fileID: 6972268858067725513, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: 'allRecipes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9cf3146df9850b9449077ebbc0a81403, type: 2}
     - target: {fileID: 7328367648802267047, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
       propertyPath: m_Name
       value: Table
@@ -1821,6 +1837,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6742354904864947391, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
+      propertyPath: recipeList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742354904864947391, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
+      propertyPath: 'recipeList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e2b4a6c5a8747e47b2f5fdcc9a8cae7, type: 2}
+    - target: {fileID: 6742354904864947391, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
+      propertyPath: 'recipeList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c7696bbb0406aeb42880eece358eb172, type: 2}
+    - target: {fileID: 6742354904864947391, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
+      propertyPath: 'recipeList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9cf3146df9850b9449077ebbc0a81403, type: 2}
     - target: {fileID: 7017426266389331653, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1238.6443
