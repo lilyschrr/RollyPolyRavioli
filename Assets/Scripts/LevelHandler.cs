@@ -13,6 +13,7 @@ public class LevelHandler : MonoBehaviour
     [Header("Game State")]
     public string adjective;
     public string recipeName;
+    public RecipeData selectedRecipe;
     public int score = 0;
     public int currentLevel = 1;
     [SerializeField] private int maxLevels = 3;

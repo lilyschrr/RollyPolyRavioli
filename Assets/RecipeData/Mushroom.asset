@@ -18,3 +18,9 @@ MonoBehaviour:
   - Rich
   - Dense
   - Refined
+  ingredients:
+  - Mushroom
+  - Truffle
+  - Milk
+  - Egg
+  - Ricotta

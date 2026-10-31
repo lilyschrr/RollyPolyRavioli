@@ -18,3 +18,9 @@ MonoBehaviour:
   - Fresh
   - Light
   - Zesty
+  ingredients:
+  - Lemon
+  - Basil
+  - Milk
+  - Egg
+  - Ricotta

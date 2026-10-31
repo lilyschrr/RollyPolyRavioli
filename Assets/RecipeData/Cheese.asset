@@ -18,3 +18,9 @@ MonoBehaviour:
   - Cheesy
   - Smooth
   - Classic
+  ingredients:
+  - Cheese
+  - Tomato
+  - Milk
+  - Egg
+  - Ricotta

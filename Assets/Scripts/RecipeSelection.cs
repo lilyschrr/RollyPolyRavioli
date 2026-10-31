@@ -5,6 +5,7 @@ public class RecipeSelection : MonoBehaviour
     [SerializeField] private LevelHandler levelHandler;
     [SerializeField] private ImageGallery imageGallery;
     [SerializeField] private GameObject bookSceneView;
+    
 
     public void OnFinish()
     {
@@ -18,6 +19,7 @@ public class RecipeSelection : MonoBehaviour
 
         // Store chosen recipe name in LevelHandler
         levelHandler.recipeName = selectedRecipe.RecipeName;
+        levelHandler.selectedRecipe = selectedRecipe;
 
         // Determine score dynamically using ScriptableObject's logic
         string currentAdjective = levelHandler.adjective;
@@ -30,6 +32,6 @@ public class RecipeSelection : MonoBehaviour
 
         // Exit & send earned score
         bookSceneView.SetActive(false);
-        levelHandler.ExitStation(0, pointsEarned);
+        levelHandler.ExitStation(1, pointsEarned);
     }
 }
