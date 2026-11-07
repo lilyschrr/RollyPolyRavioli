@@ -19,8 +19,13 @@ MonoBehaviour:
   - Dense
   - Refined
   ingredients:
-  - Mushroom
-  - Truffle
-  - Milk
-  - Egg
-  - Ricotta
+  - name: Mushroom
+    sprite: {fileID: 21300000, guid: 9d241f7b5e50caf4ab3e7cf4ccad798c, type: 3}
+  - name: Truffle
+    sprite: {fileID: 21300000, guid: 3e01fd52153e84d4abbb00401e3b1755, type: 3}
+  - name: Milk
+    sprite: {fileID: 21300000, guid: 269666e5c26e5d54aa310d679e1711b3, type: 3}
+  - name: Ricotta
+    sprite: {fileID: 21300000, guid: 5d0a08b93a52bc347afc3870dc641c8c, type: 3}
+  - name: Egg
+    sprite: {fileID: 21300000, guid: 718294691fe134246a71ee902d13a979, type: 3}

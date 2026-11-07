@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Target & Success Event")]
-    [SerializeField] private RectTransform targetDropZone;
+    [SerializeField] public RectTransform targetDropZone;
     public UnityEvent onSuccessfulDrop;
 
     [Header("Settings")]
