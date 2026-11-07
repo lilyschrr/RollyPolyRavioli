@@ -4,16 +4,36 @@ using UnityEngine.Events;
 using TMPro;
 using System.Collections.Generic;
 using System;
+using UnityEngine.UI;
 
 public class CounterStation : MonoBehaviour
 {
-[SerializeField] RectTransform inventoryPanel;
+[SerializeField] LevelHandler levelHandler;
+[SerializeField] private GameObject counterSceneView;
+[SerializeField] HorizontalLayoutGroup inventoryPanel;
+[SerializeField] GameObject dragIngredient;
+
+
+private List<IngredientData> requiredIngredients = new List<IngredientData>();
+
+private int pointsEarned = 40;
 
 
     void Start()
     {
         // Load ingredients list as sprites within inventory panel
-        // Add draggable component to each
+        // Change unique ingredients' sprites according to recipe chosen:
+
+        // Pull required ingredients from the chosen RecipeData
+        if (levelHandler != null && levelHandler.selectedRecipe != null)
+        {
+            requiredIngredients = new List<IngredientData>(levelHandler.selectedRecipe.Ingredients);
+            foreach (IngredientData ingr in requiredIngredients)
+            {
+                
+            }
+        }
+
     }
 
     public void OnSuccessfulDrop()

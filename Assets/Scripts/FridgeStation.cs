@@ -9,7 +9,8 @@ public class FridgeStation : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textField;
 
 
-    private List<string> requiredIngredients = new List<string>();
+    private List<IngredientData> requiredIngredients = new List<IngredientData>();
+    private List<string> ingrNames = new List<string>();
     private List<string> collectedIngredients = new List<string>();
     private int pointsEarned = 20;
 
@@ -18,30 +19,31 @@ public class FridgeStation : MonoBehaviour
         // Pull required ingredients from the chosen RecipeData
         if (levelHandler != null && levelHandler.selectedRecipe != null)
         {
-            requiredIngredients = new List<string>(levelHandler.selectedRecipe.Ingredients);
+            requiredIngredients = new List<IngredientData>(levelHandler.selectedRecipe.Ingredients);
             
             // configure text
-            foreach (string str in requiredIngredients)
+            foreach (IngredientData ingr in requiredIngredients)
             {
-                textField.text += "\n- " + str;
+                textField.text += "\n- " + ingr.name;
+                ingrNames.Add(ingr.name); // create list of required names
             }
             
             Debug.Log($"Fridge loaded recipe: {levelHandler.selectedRecipe.RecipeName} with {requiredIngredients.Count} ingredients required.");
         }
     }
 
-    public void OnIngredientClicked(string ingredientName, GameObject clickedButtonObject)
+    public void OnIngredientClicked(string ingr, GameObject clickedButtonObject)
     {
         // Check if the clicked item is needed and hasn't been collected
-        if (requiredIngredients.Contains(ingredientName) && !collectedIngredients.Contains(ingredientName))
+        if (ingrNames.Contains(ingr) && !collectedIngredients.Contains(ingr))
         {
-            collectedIngredients.Add(ingredientName);
+            collectedIngredients.Add(ingr);
 
             // Hide the button
             clickedButtonObject.SetActive(false);
 
             // When complete:
-            if (collectedIngredients.Count >= requiredIngredients.Count)
+            if (collectedIngredients.Count >= ingrNames.Count)
             {
                 CompleteFridgeStage();
             }

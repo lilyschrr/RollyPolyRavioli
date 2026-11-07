@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FridgeItemButton
   fridgeStationPrefab: {fileID: 5837809671499229728}
-  ingredientName: Tomato
+  ingrName: Tomato
 --- !u!114 &1936364588533784504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FridgeItemButton
   fridgeStationPrefab: {fileID: 5837809671499229728}
-  ingredientName: Basil
+  ingrName: Basil
 --- !u!114 &2933462553674310775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FridgeItemButton
   fridgeStationPrefab: {fileID: 5837809671499229728}
-  ingredientName: Ricotta
+  ingrName: Ricotta
 --- !u!114 &5685104954454054736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,7 +881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FridgeItemButton
   fridgeStationPrefab: {fileID: 5837809671499229728}
-  ingredientName: Egg
+  ingrName: Egg
 --- !u!114 &1040611593407345713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FridgeItemButton
   fridgeStationPrefab: {fileID: 5837809671499229728}
-  ingredientName: Lemon
+  ingrName: Lemon
 --- !u!114 &1332539614198406394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FridgeItemButton
   fridgeStationPrefab: {fileID: 5837809671499229728}
-  ingredientName: Cheese
+  ingrName: Cheese
 --- !u!1 &6745875901724594285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,7 +1286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FridgeItemButton
   fridgeStationPrefab: {fileID: 5837809671499229728}
-  ingredientName: Truffle
+  ingrName: Truffle
 --- !u!114 &3024706828707855885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FridgeItemButton
   fridgeStationPrefab: {fileID: 5837809671499229728}
-  ingredientName: Milk
+  ingrName: Milk
 --- !u!114 &831219629937874367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1705,6 +1705,7 @@ GameObject:
   - component: {fileID: 5003975784562259872}
   - component: {fileID: 4188244141019771330}
   - component: {fileID: 8554864502444639285}
+  - component: {fileID: 1655721815709482922}
   m_Layer: 5
   m_Name: Mushroom
   m_TagString: Untagged
@@ -1813,3 +1814,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1655721815709482922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982752719034136640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624f0816a3a54954da126e25dccb998e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FridgeItemButton
+  fridgeStationPrefab: {fileID: 5837809671499229728}
+  ingrName: Mushroom

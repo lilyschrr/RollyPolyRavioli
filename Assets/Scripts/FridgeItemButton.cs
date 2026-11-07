@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class FridgeItemButton : MonoBehaviour
 {
     [SerializeField] private FridgeStation fridgeStationPrefab;
-    [SerializeField] private string ingredientName;
+    [SerializeField] private string ingrName;
 
     private Button button;
 
@@ -21,7 +21,7 @@ public class FridgeItemButton : MonoBehaviour
     {
         if (fridgeStationPrefab != null)
         {
-            fridgeStationPrefab.OnIngredientClicked(ingredientName, gameObject);
+            fridgeStationPrefab.OnIngredientClicked(ingrName, gameObject);
         }
     }
 }
