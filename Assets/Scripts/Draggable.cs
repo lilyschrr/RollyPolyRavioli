@@ -60,6 +60,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             
             // Trigger logic/event
             onSuccessfulDrop?.Invoke();
+            Object.FindAnyObjectByType<CounterStation>().OnSuccessfulDrop();
         }
         else
         {
