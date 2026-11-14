@@ -24,7 +24,7 @@ MonoBehaviour:
   - name: Basil
     sprite: {fileID: 21300000, guid: 1ff333f6e183fdf4e8eaed968a635fa7, type: 3}
   - name: Milk
-    sprite: {fileID: 21300000, guid: 269666e5c26e5d54aa310d679e1711b3, type: 3}
+    sprite: {fileID: 21300000, guid: 99774ac879bcee8459a20f295f6425a3, type: 3}
   - name: Ricotta
     sprite: {fileID: 21300000, guid: 5d0a08b93a52bc347afc3870dc641c8c, type: 3}
   - name: Egg
