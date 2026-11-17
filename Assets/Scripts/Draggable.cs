@@ -60,7 +60,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             
             // Trigger logic/event
             onSuccessfulDrop?.Invoke();
-            Object.FindAnyObjectByType<CounterStation>().OnSuccessfulDrop();
+
+            LevelHandler levelHandler = Object.FindAnyObjectByType<LevelHandler>();
+            if( levelHandler.GetCurrentStationName() == "Counter") Object.FindAnyObjectByType<CounterStation>().OnSuccessfulDrop();
+            else if( levelHandler.GetCurrentStationName() == "Pot") Object.FindAnyObjectByType<PotStation>().OnSuccessfulDrop();
         }
         else
         {

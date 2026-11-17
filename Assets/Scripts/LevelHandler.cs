@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -108,5 +109,10 @@ public class LevelHandler : MonoBehaviour
             }
             // TODO: Trigger Win/result Screen here
         }
+    }
+
+    public string GetCurrentStationName()
+    {
+        return stationObjects.ElementAt(currentStationIndex).name.ToString();
     }
 }
