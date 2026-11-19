@@ -29,3 +29,4 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 5d0a08b93a52bc347afc3870dc641c8c, type: 3}
   - name: Egg
     sprite: {fileID: 21300000, guid: 718294691fe134246a71ee902d13a979, type: 3}
+  finalMealSprite: {fileID: 21300000, guid: e5b8efe1ce5b6384a998e8b04271a1ed, type: 3}

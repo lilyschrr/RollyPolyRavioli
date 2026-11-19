@@ -4,6 +4,7 @@ using UnityEngine;
 public class PotStation : MonoBehaviour
 {
     [SerializeField] private LevelHandler levelHandler;
+    [SerializeField] private Interactable potZone;
     [SerializeField] private GameObject potSceneView;
     [SerializeField] public GameObject ravioliPanel;
     [SerializeField] public RectTransform potPanel;
@@ -51,6 +52,7 @@ public class PotStation : MonoBehaviour
     private void CloseStation()
     {
         potSceneView.SetActive(false);
+        potZone.ResetInteraction();
         levelHandler.ExitStation(4, pointsEarned); 
     }
 }

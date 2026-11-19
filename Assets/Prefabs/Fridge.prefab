@@ -1512,8 +1512,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FridgeStation
   levelHandler: {fileID: 0}
+  fridgeZone: {fileID: 0}
   fridgeSceneView: {fileID: 7026862604918578922}
   textField: {fileID: 5026274850681139203}
+  allFridgeContents:
+  - {fileID: 7001424731012704203}
+  - {fileID: 4462413063171366599}
+  - {fileID: 4907200725852569648}
+  - {fileID: 8982752719034136640}
+  - {fileID: 676217854752742191}
+  - {fileID: 3956617544766416702}
+  - {fileID: 6745875901724594285}
+  - {fileID: 1112117474249760383}
+  - {fileID: 5608159814759271027}
 --- !u!1 &7527109410208268870
 GameObject:
   m_ObjectHideFlags: 0

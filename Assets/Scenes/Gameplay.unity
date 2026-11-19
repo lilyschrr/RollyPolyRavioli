@@ -248,6 +248,8 @@ MonoBehaviour:
   player: {fileID: 621855145}
   stationPrefab: {fileID: 940474591}
   stationCollider: {fileID: 103810247}
+  stationObject: {fileID: 1277018083}
+  levelHandler: {fileID: 1500505703}
   enterAction:
     m_Name: Enter
     m_Type: 0
@@ -1364,6 +1366,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6972268858067725513, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
+      propertyPath: tableZone
+      value: 
+      objectReference: {fileID: 1930340798}
+    - target: {fileID: 6972268858067725513, guid: f0d983b76ccd6474c8dcfe6800a790f5, type: 3}
       propertyPath: levelHandler
       value: 
       objectReference: {fileID: 1500505703}
@@ -1652,6 +1658,8 @@ MonoBehaviour:
   player: {fileID: 621855145}
   stationPrefab: {fileID: 1131853520}
   stationCollider: {fileID: 590536888}
+  stationObject: {fileID: 1872871839}
+  levelHandler: {fileID: 1500505703}
   enterAction:
     m_Name: Enter
     m_Type: 0
@@ -1796,6 +1804,8 @@ MonoBehaviour:
   player: {fileID: 621855145}
   stationPrefab: {fileID: 1502104339}
   stationCollider: {fileID: 594346791}
+  stationObject: {fileID: 822204570}
+  levelHandler: {fileID: 1500505703}
   enterAction:
     m_Name: Enter
     m_Type: 0
@@ -2051,6 +2061,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1813307664587104786, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
+      propertyPath: bookZone
+      value: 
+      objectReference: {fileID: 590536893}
+    - target: {fileID: 1813307664587104786, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
       propertyPath: levelHandler
       value: 
       objectReference: {fileID: 1500505703}
@@ -2179,6 +2193,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 900ae7bd1c11a9b42b2066dc6684ee17, type: 3}
+--- !u!1 &710153073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 710153075}
+  - component: {fileID: 710153074}
+  m_Layer: 0
+  m_Name: SceneChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &710153074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710153073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59b6ec3a0af27c47a93c0a303a92bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
+--- !u!4 &710153075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710153073}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 674.78937, y: -99.99992, z: 1237.6989}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &719541446
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,6 +3230,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2781438069956357680, guid: 2908901fea2387c499b2564c80d06115, type: 3}
+      propertyPath: potZone
+      value: 
+      objectReference: {fileID: 103810252}
+    - target: {fileID: 2781438069956357680, guid: 2908901fea2387c499b2564c80d06115, type: 3}
       propertyPath: levelHandler
       value: 
       objectReference: {fileID: 1500505703}
@@ -3417,6 +3479,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -103.19354
       objectReference: {fileID: 0}
+    - target: {fileID: 7137968012101951909, guid: 09fbb4c7e09ee144d908debffce5c1ee, type: 3}
+      propertyPath: counterZone
+      value: 
+      objectReference: {fileID: 1472962193}
     - target: {fileID: 7137968012101951909, guid: 09fbb4c7e09ee144d908debffce5c1ee, type: 3}
       propertyPath: levelHandler
       value: 
@@ -4518,7 +4584,7 @@ Transform:
   m_GameObject: {fileID: 1349629433}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 60, y: 279, z: 36}
+  m_LocalPosition: {x: 161, y: 279, z: 36}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4880,6 +4946,8 @@ MonoBehaviour:
   player: {fileID: 621855145}
   stationPrefab: {fileID: 976478497}
   stationCollider: {fileID: 1472962188}
+  stationObject: {fileID: 1105372142}
+  levelHandler: {fileID: 1500505703}
   enterAction:
     m_Name: Enter
     m_Type: 0
@@ -4951,12 +5019,14 @@ MonoBehaviour:
   - {fileID: 1105372142}
   - {fileID: 1277018083}
   - {fileID: 1226506430}
+  sceneChanger: {fileID: 710153074}
+  sceneToGoTo: Conclusion
   adjective: 
   recipeName: 
   selectedRecipe: {fileID: 0}
   score: 0
   currentLevel: 1
-  maxLevels: 3
+  maxLevels: 1
 --- !u!4 &1500505704
 Transform:
   m_ObjectHideFlags: 0
@@ -4980,6 +5050,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5837809671499229728, guid: 54868f5d9f7acb5459db227a5798584b, type: 3}
+      propertyPath: fridgeZone
+      value: 
+      objectReference: {fileID: 594346796}
     - target: {fileID: 5837809671499229728, guid: 54868f5d9f7acb5459db227a5798584b, type: 3}
       propertyPath: levelHandler
       value: 
@@ -5643,6 +5717,8 @@ MonoBehaviour:
   player: {fileID: 621855145}
   stationPrefab: {fileID: 1486129024}
   stationCollider: {fileID: 1930340793}
+  stationObject: {fileID: 1226506430}
+  levelHandler: {fileID: 1500505703}
   enterAction:
     m_Name: Enter
     m_Type: 0
@@ -6013,3 +6089,4 @@ SceneRoots:
   - {fileID: 976478496}
   - {fileID: 940474590}
   - {fileID: 1500505704}
+  - {fileID: 710153075}

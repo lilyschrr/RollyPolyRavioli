@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +9,13 @@ public class RecipeData : ScriptableObject
     [SerializeField] private Sprite recipeSprite;
     [SerializeField] private List<string> validAdjectives = new List<string>();
     [SerializeField] private List<IngredientData> ingredients = new List<IngredientData>();
+    [SerializeField] private Sprite finalMealSprite;
 
     public string RecipeName => recipeName;
     public Sprite RecipeSprite => recipeSprite;
     public List<string> ValidAdjectives => validAdjectives; // Public getter
     public List<IngredientData> Ingredients => ingredients; // Public getter
+    public Sprite FinalMealSprite => finalMealSprite;
 
     public bool MatchesAdjective(string adj)
     {

@@ -11,6 +11,7 @@ using Unity.VisualScripting;
 public class CounterStation : MonoBehaviour
 {
 [SerializeField] LevelHandler levelHandler;
+[SerializeField] private Interactable counterZone;
 [SerializeField] private GameObject counterSceneView;
 [SerializeField] HorizontalLayoutGroup inventoryPanel;
 [SerializeField] GameObject dragPrefab;
@@ -215,6 +216,7 @@ private int cutsToMake = 3;
         yield return new WaitForSecondsRealtime(2f);
 
         counterSceneView.SetActive(false);
+        counterZone.ResetInteraction();
         levelHandler.ExitStation(3, pointsEarned); 
     }
 

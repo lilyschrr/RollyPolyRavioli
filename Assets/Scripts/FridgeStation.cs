@@ -5,8 +5,10 @@ using TMPro;
 public class FridgeStation : MonoBehaviour
 {
     [SerializeField] private LevelHandler levelHandler;
+    [SerializeField] private Interactable fridgeZone;
     [SerializeField] private GameObject fridgeSceneView;
     [SerializeField] private TextMeshProUGUI textField;
+    [SerializeField] private List<GameObject> allFridgeContents;
 
 
     private List<IngredientData> requiredIngredients = new List<IngredientData>();
@@ -58,6 +60,7 @@ public class FridgeStation : MonoBehaviour
     private void CompleteFridgeStage()
     {
         fridgeSceneView.SetActive(false);
+        fridgeZone.ResetInteraction();
         levelHandler.ExitStation(2, pointsEarned); 
     }
 }

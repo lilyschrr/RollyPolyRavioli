@@ -3,6 +3,7 @@ using UnityEngine;
 public class RecipeSelection : MonoBehaviour
 {
     [SerializeField] private LevelHandler levelHandler;
+    [SerializeField] private Interactable bookZone;
     [SerializeField] private ImageGallery imageGallery;
     [SerializeField] private GameObject bookSceneView;
     
@@ -32,6 +33,7 @@ public class RecipeSelection : MonoBehaviour
 
         // Exit & send earned score
         bookSceneView.SetActive(false);
+        bookZone.ResetInteraction();
         levelHandler.ExitStation(1, pointsEarned);
     }
 }
