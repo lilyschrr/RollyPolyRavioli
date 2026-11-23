@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private SceneChanger sceneChanger;
     [SerializeField] private string sceneName;
+    [SerializeField] private AudioSource speakingSFX;
 
     void Start()
     {
@@ -63,7 +64,8 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueText.text = "";
         isTyping = true;
-
+        if (speakingSFX != null) speakingSFX.Play();
+        
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;

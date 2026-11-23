@@ -36,7 +36,6 @@ public class TableOrdering : MonoBehaviour
 
     private void SetUpOrdering()
     {
-        buttonText.text = "Begin Level\n" + levelHandler.currentLevel.ToString() + "/" + levelHandler.maxLevels.ToString();
         recipeImg.SetActive(false);
 
         genericText.text = "I would like a ravioli that is...";
