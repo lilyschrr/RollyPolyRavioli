@@ -2,7 +2,6 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using System;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine.UI;
 
 public class TableOrdering : MonoBehaviour

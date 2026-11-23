@@ -1471,7 +1471,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1749646850}
         m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
         m_MethodName: StartMovingCamera
         m_Mode: 1
