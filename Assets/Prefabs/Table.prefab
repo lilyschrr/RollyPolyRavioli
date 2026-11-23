@@ -929,4 +929,5 @@ MonoBehaviour:
   tableSceneView: {fileID: 7328367648802267047}
   buttonText: {fileID: 2065508501412630380}
   recipeImg: {fileID: 6516304131198425082}
+  tableZone: {fileID: 0}
   allRecipes: []

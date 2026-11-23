@@ -10,6 +10,9 @@ public class FridgeStation : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textField;
     [SerializeField] private List<GameObject> allFridgeContents;
 
+    [SerializeField] private AudioSource correctSFX;
+    [SerializeField] private AudioSource incorrectSFX;
+
 
     private List<IngredientData> requiredIngredients = new List<IngredientData>();
     private List<string> ingrNames = new List<string>();
@@ -40,6 +43,7 @@ public class FridgeStation : MonoBehaviour
         if (ingrNames.Contains(ingr) && !collectedIngredients.Contains(ingr))
         {
             collectedIngredients.Add(ingr);
+            correctSFX.Play();
 
             // Hide the button
             clickedButtonObject.SetActive(false);
@@ -54,6 +58,7 @@ public class FridgeStation : MonoBehaviour
         {
             // Deduct minor points
             if (pointsEarned > 0) pointsEarned --;
+            incorrectSFX.Play();
         }
     }
 

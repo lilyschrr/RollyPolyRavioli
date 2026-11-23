@@ -9,6 +9,8 @@ public class PotStation : MonoBehaviour
     [SerializeField] public GameObject ravioliPanel;
     [SerializeField] public RectTransform potPanel;
     [SerializeField] public GameObject boilingRavioli;
+    [SerializeField] private AudioSource boilingwaterAudio;
+    [SerializeField] private AudioSource dropSFX;
     private int toDropCount = 6;
     private int toClickCount = 6;
     private int pointsEarned = 0;
@@ -25,7 +27,7 @@ public class PotStation : MonoBehaviour
 
         ravRect.anchoredPosition = new Vector2(randomX, randomY);
 
-        // TODO: add SFX
+        dropSFX.Play();
 
         toDropCount --;
         if (toDropCount == 0)
@@ -50,7 +52,7 @@ public class PotStation : MonoBehaviour
     }
 
     private void CloseStation()
-    {
+    {   boilingwaterAudio.Stop();
         potSceneView.SetActive(false);
         potZone.ResetInteraction();
         levelHandler.ExitStation(4, pointsEarned); 

@@ -238,10 +238,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.9245283, g: 0.748843, b: 0.5145959, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 0.87142855, b: 0.6999999, a: 1}
+    m_PressedColor: {r: 0.735849, g: 0.5912577, b: 0.39846918, a: 1}
+    m_SelectedColor: {r: 1, g: 0.8705883, b: 0.69803923, a: 1}
+    m_DisabledColor: {r: 0.92549026, g: 0.7490196, b: 0.5137255, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -287,5 +287,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371712953df454a4fba1a61cea885e59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FillingButtonController
-  counterStationPrefab: {fileID: 0}
+  counterStation: {fileID: 0}
   sprite: {fileID: 21300000, guid: 3e76dcf2a766a95488ceb803ecb7804d, type: 3}

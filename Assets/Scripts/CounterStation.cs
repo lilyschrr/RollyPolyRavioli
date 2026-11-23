@@ -26,6 +26,14 @@ public class CounterStation : MonoBehaviour
 [SerializeField] List<Slider> cuttingSliders;
 [SerializeField] GameObject allSquaresParent;
 
+
+// Audio
+[SerializeField] AudioSource correctSFX;
+[SerializeField] AudioSource correct2SFX;
+[SerializeField] AudioSource stirSFX;
+[SerializeField] AudioSource cutSFX;
+[SerializeField] AudioSource sparkleSFX;
+
 private int toDropCount;
 private bool mixed1 = false;
 private bool mixed2 = false;
@@ -73,7 +81,7 @@ private int cutsToMake = 3;
 
     public void OnSuccessfulDrop()
     {
-        // TODO: add SFX
+        correctSFX.Play();
         toDropCount --;
         if (toDropCount == 0)
         {
@@ -106,10 +114,12 @@ private int cutsToMake = 3;
      if (spoon1.value == 1)
      {
         mixed1 = true; spoon1.gameObject.SetActive(false);
+        stirSFX.Play();
      }
      if (spoon2.value == 1)
      {
         mixed2 = true; spoon2.gameObject.SetActive(false);
+        stirSFX.Play();
      }
      // Proceed when both are done
      if (mixed1 && mixed2)
@@ -139,6 +149,7 @@ private int cutsToMake = 3;
     {
      if (rollingPin.value == 1)
      {
+        stirSFX.Play();
         rolledDough.gameObject.SetActive(true);
         rollingPin.gameObject.SetActive(false);
         FillingInteraction();
@@ -195,6 +206,7 @@ private int cutsToMake = 3;
     {
      if (slider.value == 1)
         {
+            cutSFX.Play();
             slider.gameObject.SetActive(false);
             cutsToMake--;
         }
@@ -211,6 +223,7 @@ private int cutsToMake = 3;
         doughToRoll.gameObject.SetActive(false);
         rolledDough.gameObject.SetActive(false);
         rolledDough2.gameObject.SetActive(false);
+        sparkleSFX.Play();
 
         // SFX
         yield return new WaitForSecondsRealtime(2f);
