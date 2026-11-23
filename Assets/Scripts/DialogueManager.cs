@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VectorGraphics;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     private bool isTyping;
     private string currentSentence;
+
+    [SerializeField] private SceneChanger sceneChanger;
+    [SerializeField] private string sceneName;
 
     void Start()
     {
@@ -72,5 +76,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         dialogueBoxPanel.SetActive(false);
+        sceneChanger.LoadTargetScene(sceneName);
     }
 }
